@@ -1,0 +1,95 @@
+*,*::before,*::after{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+body{
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 7vmin;
+    position: relative;
+}
+
+
+#game-board{
+    /* --grid-size: 4;
+    --cell-size: 20vmin;
+    --cell-gaps: 2vmin; */
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size),var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size),var(--cell-size));
+    background-color: #ccc;
+    gap:var(--cell-gaps);
+    padding: var(--cell-gaps);
+    border-radius: 1vmin;
+    position: relative;
+
+}
+
+
+.cell{
+    background-color: #AAA;
+    border-radius: 1vmin;
+    transition: 100ms ease-in-out;
+
+}
+#scoreboard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3vmin;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: white;
+}
+
+.lable{
+    font-size: 1.9vmin;
+    background-color: greenyellow;
+    color: #333;
+    font-weight: 700;
+    padding: .3vmin .8vmin;
+
+    border-radius: 100px;
+    margin-bottom: 5px;
+}
+
+.results{
+    padding-left: 5px;
+}
+
+.tile{
+    --x:1;
+    --y:3;
+    --background-color:80%;
+    --text_color:20%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:var(--cell-size);
+    height:var(--cell-size);
+    background-color: hsl(100,60% , var(--background-color));
+    color: hsl(200, 25% , var(--text-color));
+    border-radius: 1vmin;
+    top:calc(var(--x)*(var(--cell-size) + var(--cell-gaps)) + var(--cell-gaps));
+    left:calc(var(--y)*(var(--cell-size) + var(--cell-gaps)) + var(--cell-gaps));
+    font-weight: bold;
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+@keyframes show {
+    0%{
+        opacity:.3;
+        transform: scale(0);
+    }
+}
