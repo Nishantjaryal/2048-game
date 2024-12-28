@@ -115,5 +115,6 @@ body{
         font-size: 30px;
         text-align: center;
         padding-top: 33vh ;
+        z-index: 100;
     }  
 }
