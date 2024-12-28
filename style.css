@@ -18,6 +18,8 @@ body{
 }
 
 
+
+
 #game-board{
     /* --grid-size: 4;
     --cell-size: 20vmin;
@@ -92,4 +94,26 @@ body{
         opacity:.3;
         transform: scale(0);
     }
+}
+
+
+#filter{
+    display: none;
+}
+
+
+@media screen and (max-width:1000px) {
+    #filter{
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: green;
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 33vh ;
+    }  
 }
