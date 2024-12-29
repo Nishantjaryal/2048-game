@@ -1,7 +1,35 @@
 import { Grid, cleanBoard } from "./grid.js"
 import Tile from "./tile.js"
 
-
+document.querySelector("#up").addEventListener("click", function () {
+    if (!canMoveUp()) {
+        setupInput()
+        return
+    }
+    moveUp()
+    console.log("up")
+})
+document.querySelector("#down").addEventListener("click", function () {
+    if (!canMoveDown()) {
+        setupInput()
+        return
+    }
+    moveDown()
+})
+document.querySelector("#right").addEventListener("click", function () {
+    if (!canMoveRight()) {
+        setupInput()
+        return
+    }
+    moveRight()
+})
+document.querySelector("#left").addEventListener("click", function () {
+    if (!canMoveLeft()) {
+        setupInput()
+        return
+    }
+    moveLeft()
+})
 
 const reload = document.getElementById("reload")
 const breakOver = document.getElementById("breakOver")
@@ -53,6 +81,9 @@ function hanleInput(e) {
             setupInput()
             return
     }
+
+
+   
 
 
     grid.cells.forEach(cell => cell.mergeTiles())
